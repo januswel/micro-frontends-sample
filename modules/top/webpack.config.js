@@ -2,9 +2,8 @@ const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: './src/index.js',
-  devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, 'dist'),
   },
@@ -20,7 +19,7 @@ module.exports = {
     extensions: ['.js', '.vue'],
     modules: ['node_modules'],
     alias: {
-      vue: 'vue/dist/vue.common.js',
+      vue: 'vue/dist/vue.esm.js',
     },
   },
   plugins: [new VueLoaderPlugin()],

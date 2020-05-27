@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+import App from './App'
+
 class XSearch extends HTMLElement {
   connectedCallback() {
     const mountPoint = document.createElement('span')
@@ -11,8 +13,7 @@ class XSearch extends HTMLElement {
       throw new Error('name is required')
     }
 
-    const url = 'https://www.google.com/search?q=' + encodeURIComponent(name)
-    ReactDOM.render(<a href={url}>{name}</a>, mountPoint)
+    ReactDOM.render(<App name={name} />, mountPoint)
   }
 }
 
